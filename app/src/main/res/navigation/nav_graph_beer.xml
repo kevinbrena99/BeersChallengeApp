@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_beer"
+    app:startDestination="@id/beerCarouselFragment">
+
+    <fragment
+        android:id="@+id/beerCarouselFragment"
+        android:name="com.brena.beerschallengeapp.presentation.ui.fragment.feature.beers.list.BeerCarouselFragment"
+        android:label="fragment_beer_corousel"
+        tools:layout="@layout/fragment_beer_corousel" >
+        <action
+            android:id="@+id/action_beerCarouselFragment_to_beerDetailFragment"
+            app:destination="@id/beerDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/beerDetailFragment"
+        android:name="com.brena.beerschallengeapp.presentation.ui.fragment.feature.beers.detail.BeerDetailFragment"
+        android:label="fragment_beer_detail"
+        tools:layout="@layout/fragment_beer_detail" />
+</navigation>
