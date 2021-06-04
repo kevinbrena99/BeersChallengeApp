@@ -1,5 +1,6 @@
 package com.brena.beerschallengeapp.data.network
 
+import com.brena.beerschallengeapp.data.response.BeerResponse
 import com.brena.beerschallengeapp.data.util.ConnectionUtils
 import com.brena.beerschallengeapp.domain.handle.Either
 import com.brena.beerschallengeapp.domain.handle.Failure
@@ -27,6 +28,9 @@ class EndPointsImpl(
         private val KEY_STATUS_CODE = "statusCode"
         private val KEY_MESSAGE = "message"
     }
+
+
+    override suspend fun getBeers(page: Int): Either<Failure, List<BeerResponse>> = callService { endPointService.getBeers(page) }
 
 
     private suspend inline fun <T> callService(crossinline retrofitCall: suspend () -> Response<T>)
@@ -101,4 +105,5 @@ class EndPointsImpl(
             )
         }
     }
+
 }
