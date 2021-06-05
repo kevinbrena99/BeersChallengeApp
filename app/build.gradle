@@ -62,4 +62,7 @@ dependencies {
     // Navigation Component
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+
+    // Carousel RecyclerView
+    implementation 'com.github.sparrow007:carouselrecyclerview:1.2.1'
 }
