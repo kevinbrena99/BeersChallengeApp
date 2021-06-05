@@ -13,7 +13,7 @@ import retrofit2.http.Query
  **/
 interface EndPointService {
 
-    @GET("/beers")
+    @GET("beers")
     suspend fun getBeers(@Query("page")page: Int): Response<List<BeerResponse>>
 
 }

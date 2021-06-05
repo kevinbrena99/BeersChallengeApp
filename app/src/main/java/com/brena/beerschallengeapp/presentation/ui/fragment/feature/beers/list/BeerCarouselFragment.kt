@@ -1,23 +1,34 @@
 package com.brena.beerschallengeapp.presentation.ui.fragment.feature.beers.list
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+
 import android.view.View
-import android.view.ViewGroup
+import com.brena.beerschallengeapp.BR
 import com.brena.beerschallengeapp.R
+import com.brena.beerschallengeapp.databinding.FragmentBeerCorouselBinding
+import com.brena.beerschallengeapp.presentation.ui.base.BaseFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class BeerCarouselFragment : Fragment() {
+class BeerCarouselFragment : BaseFragment<FragmentBeerCorouselBinding,BeerListViewModel>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override val myViewModel: BeerListViewModel by viewModel()
+    override val getLayoutId: Int = R.layout.fragment_beer_corousel
+    override val getBindingVariable: Int = BR.beerListViewModel
+
+    override fun onFragmentViewReady(view: View) {
+        setupRecyclerCarousel()
+        initLiveData()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_beer_corousel, container, false)
+    private fun setupRecyclerCarousel(){
+        with(binding.recycler){
+            set3DItem(true)
+            setAlpha(true)
+        }
+    }
+
+    private fun initLiveData(){
+        myViewModel.beersLiveData.observe(viewLifecycleOwner,{
+            myViewModel.setItemAfterMapping(it)
+        })
     }
 }

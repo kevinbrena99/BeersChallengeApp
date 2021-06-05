@@ -11,5 +11,5 @@ import org.koin.dsl.module
  * Lima, Peru.
  **/
 val viewModelModule = module {
-    viewModel { BeerListViewModel() }
+    viewModel { BeerListViewModel(get(),get()) }
 }

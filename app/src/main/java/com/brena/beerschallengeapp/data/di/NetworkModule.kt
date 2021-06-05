@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit
  *
  * Lima, Peru.
  **/
-val netWorkModule = module {
+val networkModule = module {
     single<ConnectionUtils> { ConnectionUtilsImpl(androidContext()) }
     factory { SupportInterceptor() }
     single { provideOkHttpClient(get()) }

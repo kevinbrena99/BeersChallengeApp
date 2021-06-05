@@ -39,13 +39,6 @@ abstract class BaseAdapter<D : ViewDataBinding, T : Any>(
         return MyViewHolder(dataBinding as D)
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return if (isLoading) {
-            if (items.size - 1 == position) VIEW_TYPE_LOADING else VIEW_TYPE_NORMAL
-        } else {
-            VIEW_TYPE_NORMAL
-        }
-    }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val myHolder = (holder as BaseAdapter<*, *>.MyViewHolder)

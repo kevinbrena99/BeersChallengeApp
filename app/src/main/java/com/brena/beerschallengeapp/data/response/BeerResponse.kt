@@ -10,6 +10,6 @@ data class BeerResponse(
     val id: Int,
     val name: String,
     val description: String,
-    val image_url: String,
+    val image_url: String?,
     val volume: VolumeResponse
 )

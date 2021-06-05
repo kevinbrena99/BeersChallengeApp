@@ -7,6 +7,6 @@ package com.brena.beerschallengeapp.presentation.model
  * Lima, Peru.
  **/
 data class Volume(
-    val value: Double,
+    val value: Int,
     val unit: String
 )

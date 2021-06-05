@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
+        android:layout_margin="50dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp">
 
@@ -31,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
+                app:urlServer="@{ model.image_url }"
                 app:layout_constraintBottom_toTopOf="@+id/guideline"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:gravity="center"
+                android:text="@{ model.name }"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -54,6 +56,7 @@
                 android:background="@color/white"
                 android:minWidth="130dp"
                 android:padding="7dp"
+                android:text='@{ model.volume.value + " "+ model.volume.unit}'
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

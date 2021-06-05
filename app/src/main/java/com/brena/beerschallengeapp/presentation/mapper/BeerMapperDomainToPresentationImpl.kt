@@ -17,9 +17,9 @@ class BeerMapperDomainToPresentationImpl : BeerMapperDomainToPresentation {
                 id = beer.id,
                 name = beer.name,
                 description = beer.description,
-                image_url = beer.image_url,
+                image_url = beer.image_url ?: "",
                 volume = Volume(
-                    value = beer.volume.value,
+                    value = beer.volume.value.toInt(),
                     unit = beer.volume.unit
                 )
             )
