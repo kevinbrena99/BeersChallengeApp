@@ -21,16 +21,18 @@ fun recyclerHorizontal(recyclerView: RecyclerView, adapter: RecyclerView.Adapter
 }
 
 @BindingAdapter("app:urlServer")
-fun setImageUrl(imageView: ImageView, url: String){
-    if(url.isNotEmpty()){
-        Glide.with(imageView.context)
-            .load(url)
-            .centerCrop()
-            .into(imageView)
-    }else{
-        Glide.with(imageView.context)
-            .load(R.drawable.image_beer_not_found)
-            .centerCrop()
-            .into(imageView)
+fun setImageUrl(imageView: ImageView, url: String?){
+    if (url != null) {
+        if(url.isNotEmpty()){
+            Glide.with(imageView.context)
+                .load(url)
+                .centerCrop()
+                .into(imageView)
+        }else{
+            Glide.with(imageView.context)
+                .load(R.drawable.image_beer_not_found)
+                .centerCrop()
+                .into(imageView)
+        }
     }
 }

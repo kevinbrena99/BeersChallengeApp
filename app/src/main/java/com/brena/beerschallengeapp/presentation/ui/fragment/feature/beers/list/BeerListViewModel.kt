@@ -16,7 +16,7 @@ import kotlinx.coroutines.Dispatchers
  * Lima, Peru.
  **/
 class BeerListViewModel(private val getBeersUseCase: GetBeersUseCase,
-                        private val mapperBeerMapperDomainToPresentation: BeerMapperDomainToPresentation): BaseViewModel<Any>() {
+                        private val mapperBeerMapperDomainToPresentation: BeerMapperDomainToPresentation): BaseViewModel<ListenerBeerClick>() {
 
     companion object{
         const val PAGE = 10
@@ -32,7 +32,7 @@ class BeerListViewModel(private val getBeersUseCase: GetBeersUseCase,
     }
 
     val adapter = BeerAdapter{ beer: Beer, position: Int ->
-
+        getNavigator()?.onClickBeer(beer)
     }
 
     fun setItemAfterMapping(beers: List<Beer>){

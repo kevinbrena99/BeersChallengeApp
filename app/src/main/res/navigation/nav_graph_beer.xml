@@ -9,7 +9,7 @@
         android:id="@+id/beerCarouselFragment"
         android:name="com.brena.beerschallengeapp.presentation.ui.fragment.feature.beers.list.BeerCarouselFragment"
         android:label="fragment_beer_corousel"
-        tools:layout="@layout/fragment_beer_corousel" >
+        tools:layout="@layout/fragment_beer_corousel">
         <action
             android:id="@+id/action_beerCarouselFragment_to_beerDetailFragment"
             app:destination="@id/beerDetailFragment" />
@@ -18,5 +18,10 @@
         android:id="@+id/beerDetailFragment"
         android:name="com.brena.beerschallengeapp.presentation.ui.fragment.feature.beers.detail.BeerDetailFragment"
         android:label="fragment_beer_detail"
-        tools:layout="@layout/fragment_beer_detail" />
+        tools:layout="@layout/fragment_beer_detail">
+        <argument
+            android:name="beer"
+            app:argType="com.brena.beerschallengeapp.presentation.model.Beer" />
+    </fragment>
+
 </navigation>

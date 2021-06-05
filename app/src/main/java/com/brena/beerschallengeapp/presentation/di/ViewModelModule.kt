@@ -1,5 +1,6 @@
 package com.brena.beerschallengeapp.presentation.di
 
+import com.brena.beerschallengeapp.presentation.ui.fragment.feature.beers.detail.BeerDetailViewModel
 import com.brena.beerschallengeapp.presentation.ui.fragment.feature.beers.list.BeerListViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -12,4 +13,5 @@ import org.koin.dsl.module
  **/
 val viewModelModule = module {
     viewModel { BeerListViewModel(get(),get()) }
+    viewModel { BeerDetailViewModel() }
 }
